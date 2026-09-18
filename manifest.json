@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "loader": {
-    "version": "0.1.0",
-    "sha256": "e3b816c6422acb2677cf049d5c28ea1534517ec45463332e73710c69a04fa695",
-    "url": "https://github.com/WoW-U/yacre-dist/releases/download/v0.1.0/yacre-0.1.0.lua"
+    "version": "0.1.1",
+    "sha256": "acb71ef54d9cef0d5d152b66998061b70ccacce555e1895d8c9d30f95ffae264",
+    "url": "https://github.com/WoW-U/yacre-dist/releases/download/v0.1.1/yacre-0.1.1.lua"
   },
   "bootstrap": {
-    "version": "1.0.0",
-    "sha256": "40db9d105744b194e29ffba5157e8ff08958150167d164b6fda37d621167c540",
-    "url": "https://github.com/WoW-U/yacre-dist/releases/download/v0.1.0/yacre-bootstrap-1.0.0.lua"
+    "version": "1.0.1",
+    "sha256": "ee5a74518b372f815dda2dff9acd69d13c0c9af05b365f2bf807f6363cc87806",
+    "url": "https://github.com/WoW-U/yacre-dist/releases/download/v0.1.1/yacre-bootstrap-1.0.1.lua"
   },
   "minBootstrap": "1.0.0"
 }
