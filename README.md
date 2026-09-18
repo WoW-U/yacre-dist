@@ -8,26 +8,25 @@ engine sources live elsewhere.
 
 ## Install
 
-1. Download **`yacre-bootstrap-nilname-<version>.zip`** from the
-   [latest release](../../releases/latest) and unpack it.
-2. Put **`_yacre.lua`** from the archive into `{NilNameDir}\scripts`.
-3. Launch WoW. When the chat says the engine has been downloaded, `/reload` once.
+1. Download **`_yacre.nilname.lua`** from the [latest release](../../releases/latest).
+2. Put it in `{NilNameDir}\scripts` — the folder holding your NilName install's `scripts` directory.
+3. Log in.
 
-Do not rename the file: NilName runs a script only if its name starts with `_` and ends with
-`.lua`. Renamed, it sits there doing nothing, without an error. `INSTALL.txt` in the archive
-repeats all of this offline.
+The engine downloads itself in the background and starts on its own, in that same session. No
+`/reload`, no unpacking, nothing else to fetch.
 
-That is the whole install, and the last time you download anything by hand.
+**Do not rename the file.** NilName runs a script only when its name starts with `_` and ends with
+`.lua`. Renamed, it does nothing and reports nothing.
 
-Each release also carries a bare `_yacre.lua` next to the archive — that copy is what the updater
-fetches when it replaces itself, and it works just as well for a manual install.
+The other asset on the release, `yacre-engine-<version>.nilname.lua`, is what the updater fetches
+for you — you never download it yourself.
 
 ## Updates
 
-On every launch that file starts the engine build it already has on disk, then checks
-[`manifest.json`](manifest.json) in the background. A newer build is downloaded, verified against
-its SHA-256 and applied on your next `/reload` — you are told in chat when one is waiting. It
-updates *itself* the same way.
+Every launch, the installed build starts first and a check against [`manifest.json`](manifest.json)
+runs in the background. A newer build is downloaded, verified against its SHA-256, and comes up at
+your next login — `/reload` if you want it sooner. The updater replaces itself the same way. You are
+told in chat whenever something arrived.
 
 Two builds are kept side by side under `{NilNameDir}\scripts\yacre\slot_a` and `slot_b`. A download
 always fills the slot that is **not** running, so an interrupted download cannot damage the build
@@ -56,10 +55,10 @@ Optional. `{NilNameDir}\scripts\yacre\config.json` is not created for you and is
 
 ## Troubleshooting
 
-- **Nothing happens on login** — confirm the file is at `{NilNameDir}\scripts\_entrypoint.lua` and
-  that NilName itself is loading. Errors are printed in chat, prefixed `YACRE:`.
-- **Stuck on an old build** — check `autoUpdate` is not `false` and that `channel` is not `"local"`.
+- **Nothing happens at all** — check the file really is at `{NilNameDir}\scripts\_yacre.nilname.lua`,
+  spelled exactly like that, and that NilName itself is loading. Messages are prefixed `YACRE:`.
+- **Stuck on an old build** — check `autoUpdate` is not `false` and `channel` is not `"local"`.
 - **Anything unexplained** — delete `{NilNameDir}\scripts\yacre` and relaunch. Everything in it is
-  re-downloaded.
+  downloaded again.
 
 The build you are on is shown in the main window's title bar. Quote it in bug reports.
