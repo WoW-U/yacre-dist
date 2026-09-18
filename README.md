@@ -8,9 +8,12 @@ engine sources live elsewhere.
 
 ## Install
 
-1. Download `yacre-bootstrap-<version>.lua` from the [latest release](../../releases/latest).
-2. Rename it to `_entrypoint.lua` and put it in `{NilNameDir}\scripts`.
-3. Launch WoW.
+1. Download **`_yacre.lua`** from the [latest release](../../releases/latest).
+2. Put it in `{NilNameDir}\scripts`.
+3. Launch WoW. When the chat says the engine has been downloaded, `/reload` once.
+
+Do not rename the file: NilName runs a script only if its name starts with `_` and ends with
+`.lua`. Renamed, it sits there doing nothing, without an error.
 
 That is the whole install, and the last time you download anything by hand.
 
